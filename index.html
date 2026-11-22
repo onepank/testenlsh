@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="top-tag">jQuery Trainer</div>
+            <h1>Language Learning</h1>
+            <p class="subtitle">Введіть переклад та натисніть на картку для перевірки</p>
+        </header>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="word-card" id="wordCard">
+                <span class="card-badge" id="cardStatus">Перевірити</span>
+                <div class="word-text" id="wordDisplay"></div>
+                <div class="correct-hint" id="correctHint"></div>
+            </div>
+        </div>
+
+        <div class="navigation-bar">
+            <button class="nav-btn" id="prevBtn">&larr;</button>
+            <span class="step-counter" id="stepCounter">1/15</span>
+            <button class="nav-btn" id="nextBtn">&rarr;</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="translationInput" placeholder="Введіть переклад українською..." autocomplete="off">
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-title" id="showModalBtn">Статистика</div>
+            <div class="counters-row">
+                <div class="counter-box correct-box">
+                    <span class="counter-label">Вірно</span>
+                    <span class="counter-value" id="correctCount">0</span>
+                </div>
+                <div class="counter-box wrong-box">
+                    <span class="counter-label">Невірно</span>
+                    <span class="counter-value" id="wrongCount">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h2>Рівень знань мови</h2>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="score-circle">
+                    <span id="finalPercent">0%</span>
+                </div>
+                <h3 class="level-title" id="levelTitle"></h3>
+                <p class="level-desc" id="levelDesc"></p>
+                <div class="modal-summary">
+                    <span>Вірно: <strong id="modalCorrect">0</strong></span>
+                    <span>Невірно: <strong id="modalWrong">0</strong></span>
+                    <span>Всього слів: <strong>15</strong></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="restart-btn" id="restartBtn">Пройти ще раз</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
